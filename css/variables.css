@@ -1,0 +1,75 @@
+/* ==========================================================================
+   Oxford Mathematics for the New Century (M1A)
+   Design System & CSS Variables — Inspired by Oxford M1A Cover Palette
+   ========================================================================== */
+
+:root {
+  /* Core Surfaces */
+  --bg-app: #f5f6fa;
+  --bg-surface: #ffffff;
+  --bg-subtle: #f8fafc;
+  --bg-warm: #fffdf7;
+
+  /* Ink & Typography */
+  --text-main: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --text-inverse: #ffffff;
+
+  /* Borders */
+  --border-light: #e2e8f0;
+  --border-strong: #cbd5e1;
+
+  /* Oxford Navy & Amber Accent Palette (echoing M1A cover) */
+  --oxford-navy: #162d59;
+  --oxford-navy-hover: #0f2042;
+  --oxford-navy-soft: #eef3fb;
+
+  --amber: #b45309;
+  --amber-bright: #d97706;
+  --amber-soft: #fffbeb;
+  --amber-border: #fde68a;
+
+  /* Semantic Chapter Colors */
+  --ch1-color: #9a3412; /* Binomial - Burnt Sienna */
+  --ch1-soft: #fff7ed;
+  --ch2-color: #0f766e; /* Exp & Log - Deep Teal */
+  --ch2-soft: #f0fdfa;
+  --ch3-color: #1d4ed8; /* Limits & Derivatives - Royal Blue */
+  --ch3-soft: #eff6ff;
+  --ch4-color: #4338ca; /* Differentiation Rules - Indigo */
+  --ch4-soft: #eef2ff;
+  --ch5-color: #7e22ce; /* Applications of Diff - Violet */
+  --ch5-soft: #faf5ff;
+  --ch6-color: #0369a1; /* Indefinite Integration - Ocean */
+  --ch6-soft: #f0f9ff;
+  --ch7-color: #b45309; /* Definite Integration & Trapezoidal - Oxford Gold */
+  --ch7-soft: #fffbeb;
+  --m1b-color: #475569; /* M1B Placeholder - Slate */
+  --m1b-soft: #f1f5f9;
+
+  /* Status Colors */
+  --success: #059669;
+  --success-soft: #ecfdf5;
+  --success-border: #a7f3d0;
+  --danger: #dc2626;
+  --danger-soft: #fef2f2;
+  --danger-border: #fecaca;
+  --info: #2563eb;
+  --info-soft: #eff6ff;
+  --info-border: #bfdbfe;
+
+  /* Layout Metrics */
+  --header-height: 66px;
+  --sidebar-width: 300px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 6px 20px rgba(22, 45, 89, 0.08);
+  --shadow-lg: 0 14px 34px rgba(22, 45, 89, 0.12);
+
+  /* Fonts */
+  --font-sans: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Segoe UI", Roboto, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}

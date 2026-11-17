@@ -1,0 +1,970 @@
+/* ==========================================================================
+   Oxford Mathematics for the New Century (M1A)
+   Pedagogical Cards, Formulas, Labs, Concept Map & 3-Stage Quiz Components
+   ========================================================================== */
+
+/* Shared Card & Surface Helpers */
+.card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 22px 24px;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 22px;
+}
+
+.card-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  padding: 4px 10px;
+  border-radius: 999px;
+  text-transform: uppercase;
+}
+
+.section-heading {
+  margin: 0;
+  font-size: 1.18rem;
+  font-weight: 800;
+  color: var(--oxford-navy);
+}
+
+/* KaTeX Overflow Safety on iPad / Mobile */
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 6px 2px;
+  margin: 10px 0 !important;
+}
+
+.term-en {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: 0.84em;
+  font-weight: 700;
+  color: var(--oxford-navy);
+  background: var(--oxford-navy-soft);
+  padding: 1px 7px;
+  border-radius: 5px;
+  margin: 0 3px;
+  border: 1px solid rgba(22, 45, 89, 0.14);
+}
+
+/* ==========================================================================
+   Hero / Book Overview
+   ========================================================================== */
+
+.hero-banner {
+  background: linear-gradient(125deg, #162d59 0%, #244785 58%, #9a510c 100%);
+  color: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 28px 30px;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow-md);
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 24px;
+  align-items: center;
+}
+
+.hero-tag {
+  display: inline-block;
+  background: rgba(245, 158, 11, 0.25);
+  border: 1px solid rgba(253, 230, 138, 0.5);
+  color: #fef3c7;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 4px 11px;
+  border-radius: 999px;
+  margin-bottom: 10px;
+}
+
+.hero-banner h1 {
+  margin: 0 0 10px;
+  font-size: 1.75rem;
+  line-height: 1.25;
+}
+
+.hero-banner p {
+  margin: 0 0 16px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.96rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.hero-visual-box {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  backdrop-filter: blur(6px);
+}
+
+.hero-visual-caption {
+  font-size: 0.78rem;
+  color: #fef3c7;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.btn {
+  appearance: none;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 42px;
+  transition: all 0.16s ease;
+}
+
+.btn-primary {
+  background: var(--oxford-navy);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--oxford-navy-hover);
+}
+
+.btn-amber {
+  background: var(--amber-bright);
+  color: #fff;
+}
+
+.btn-amber:hover {
+  background: var(--amber);
+}
+
+.btn-outline {
+  background: #fff;
+  border-color: var(--border-strong);
+  color: var(--text-main);
+}
+
+.btn-outline:hover {
+  border-color: var(--oxford-navy);
+  color: var(--oxford-navy);
+  background: var(--oxford-navy-soft);
+}
+
+.btn-ghost-light {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+
+.btn-ghost-light:hover {
+  background: rgba(255, 255, 255, 0.24);
+}
+
+.btn-sm {
+  padding: 6px 12px;
+  font-size: 0.82rem;
+  min-height: 36px;
+}
+
+/* Overview Grid */
+.overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.chapter-overview-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.16s ease, box-shadow 0.16s ease;
+}
+
+.chapter-overview-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.chapter-overview-card h3 {
+  margin: 8px 0 4px;
+  font-size: 1.06rem;
+  color: var(--text-main);
+}
+
+.chapter-overview-en {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.chapter-overview-desc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin: 0 0 14px;
+}
+
+.chapter-unit-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.unit-chip {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  padding: 5px 9px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--oxford-navy);
+  cursor: pointer;
+}
+
+.unit-chip:hover {
+  background: var(--oxford-navy-soft);
+  border-color: rgba(22, 45, 89, 0.25);
+}
+
+/* ==========================================================================
+   Unit Lesson Header & Connection Ribbon
+   ========================================================================== */
+
+.unit-header-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  border-top: 5px solid var(--oxford-navy);
+  border-radius: var(--radius-lg);
+  padding: 22px 26px;
+  margin-bottom: 22px;
+  box-shadow: var(--shadow-sm);
+}
+
+.unit-breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.unit-header-title-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.unit-header-card h1 {
+  margin: 0 0 6px;
+  font-size: 1.55rem;
+  color: var(--text-main);
+  line-height: 1.3;
+}
+
+.unit-en-subtitle {
+  font-size: 0.96rem;
+  font-weight: 600;
+  color: var(--oxford-navy);
+  margin-bottom: 10px;
+}
+
+.unit-actions-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.bookmark-btn.saved {
+  background: var(--amber-soft);
+  border-color: var(--amber-bright);
+  color: var(--amber);
+}
+
+.complete-btn.completed {
+  background: var(--success-soft);
+  border-color: var(--success);
+  color: var(--success);
+}
+
+.unit-objectives {
+  margin: 12px 0 0;
+  padding: 12px 16px;
+  background: var(--bg-subtle);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--amber-bright);
+  font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   5-Step Lesson Content Blocks
+   ========================================================================== */
+
+/* Step 1: Real-Life Intuition Card */
+.intuition-box {
+  background: linear-gradient(135deg, #fffbeb 0%, #fff7ed 100%);
+  border: 1px solid var(--amber-border);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  margin-bottom: 16px;
+}
+
+.intuition-box h4 {
+  margin: 0 0 8px;
+  color: var(--amber);
+  font-size: 1rem;
+}
+
+/* Step 2: Formula Cards & Textbook Highlights */
+.formula-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px;
+  margin: 14px 0;
+}
+
+.formula-card {
+  background: var(--bg-warm);
+  border: 1.5px solid #e5d5a8;
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+  position: relative;
+}
+
+.formula-card-label {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--amber);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.formula-math-box {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 10px 12px;
+  margin: 8px 0;
+  text-align: center;
+}
+
+.formula-note {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin: 6px 0 0;
+}
+
+/* Pitfalls & Syllabus Guardrail Box */
+.pitfall-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.pitfall-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+}
+
+.pitfall-wrong {
+  background: var(--danger-soft);
+  border: 1px solid var(--danger-border);
+  border-radius: 7px;
+  padding: 9px 12px;
+  font-size: 0.88rem;
+}
+
+.pitfall-right {
+  background: var(--success-soft);
+  border: 1px solid var(--success-border);
+  border-radius: 7px;
+  padding: 9px 12px;
+  font-size: 0.88rem;
+}
+
+.syllabus-guard {
+  margin-top: 14px;
+  padding: 12px 15px;
+  border-radius: var(--radius-sm);
+  background: var(--info-soft);
+  border: 1px solid var(--info-border);
+  color: #1e3a8a;
+  font-size: 0.88rem;
+}
+
+/* Step 3: Bilingual Worked Example (English Exam Solution + Chinese Margin Notes) */
+.example-box {
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: 18px;
+  background: #fff;
+}
+
+.example-question {
+  background: var(--oxford-navy-soft);
+  padding: 15px 18px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.example-question-tag {
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: var(--oxford-navy);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.example-en-prompt {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.example-zh-translation {
+  margin-top: 8px;
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+  padding-top: 8px;
+  border-top: 1px dashed rgba(22, 45, 89, 0.2);
+}
+
+.solution-rows {
+  display: flex;
+  flex-direction: column;
+}
+
+.solution-row {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.solution-row:last-child {
+  border-bottom: none;
+}
+
+.solution-math {
+  padding: 12px 18px;
+  background: #ffffff;
+  border-right: 1px solid var(--border-light);
+  font-size: 0.94rem;
+  overflow-x: auto;
+}
+
+.solution-why {
+  padding: 12px 16px;
+  background: var(--bg-subtle);
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+}
+
+/* Step 4: Knowledge Connection Ribbon */
+.connections-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.conn-pill-card {
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 13px 15px;
+  background: var(--bg-subtle);
+}
+
+.conn-pill-card h5 {
+  margin: 0 0 6px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.conn-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin: 4px 4px 0 0;
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(22, 45, 89, 0.22);
+  background: #fff;
+  color: var(--oxford-navy);
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.conn-link-btn:hover {
+  background: var(--oxford-navy);
+  color: #fff;
+}
+
+/* ==========================================================================
+   Step 5: 3-Stage Progressive Practice Stepper
+   ========================================================================== */
+
+.quiz-stage-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.quiz-stage-btn {
+  flex: 1;
+  min-width: 170px;
+  padding: 11px 14px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border-light);
+  background: var(--bg-subtle);
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s ease;
+}
+
+.quiz-stage-btn:hover {
+  border-color: var(--oxford-navy);
+}
+
+.quiz-stage-btn.active {
+  background: var(--oxford-navy-soft);
+  border-color: var(--oxford-navy);
+}
+
+.quiz-stage-btn.solved {
+  border-color: var(--success);
+}
+
+.quiz-stage-kicker {
+  font-size: 0.72rem;
+  font-weight: 800;
+  color: var(--amber);
+  display: flex;
+  justify-content: space-between;
+}
+
+.quiz-stage-name {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-top: 2px;
+}
+
+.quiz-panel {
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  background: var(--bg-subtle);
+}
+
+.quiz-prompt-en {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-main);
+  background: #fff;
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-light);
+  margin-bottom: 12px;
+}
+
+.quiz-zh-box {
+  background: #fffbeb;
+  border: 1px solid var(--amber-border);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.quiz-options {
+  display: grid;
+  gap: 9px;
+  margin: 12px 0;
+}
+
+.quiz-option-btn {
+  text-align: left;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border-strong);
+  background: #fff;
+  cursor: pointer;
+  font-size: 0.92rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 46px;
+  transition: all 0.14s ease;
+}
+
+.quiz-option-btn:hover {
+  border-color: var(--oxford-navy);
+  background: var(--oxford-navy-soft);
+}
+
+.quiz-option-btn.correct {
+  border-color: var(--success);
+  background: var(--success-soft);
+  color: #065f46;
+}
+
+.quiz-option-btn.wrong {
+  border-color: var(--danger);
+  background: var(--danger-soft);
+  color: #991b1b;
+}
+
+.quiz-option-letter {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-strong);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+.quiz-input-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 12px 0;
+}
+
+.quiz-text-input {
+  flex: 1;
+  min-width: 200px;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--border-strong);
+  font-size: 0.96rem;
+  min-height: 44px;
+}
+
+.quiz-toolbar {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.quiz-feedback {
+  margin-top: 12px;
+  padding: 13px 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+}
+
+.quiz-feedback.success {
+  background: var(--success-soft);
+  border: 1px solid var(--success-border);
+  color: #065f46;
+}
+
+.quiz-feedback.error {
+  background: var(--danger-soft);
+  border: 1px solid var(--danger-border);
+  color: #991b1b;
+}
+
+.quiz-hint-card {
+  margin-top: 10px;
+  padding: 11px 14px;
+  border-radius: var(--radius-sm);
+  background: #fff;
+  border-left: 3px solid var(--oxford-navy);
+  font-size: 0.88rem;
+}
+
+.quiz-solution-box {
+  margin-top: 12px;
+  padding: 14px 16px;
+  border-radius: var(--radius-sm);
+  background: #ffffff;
+  border: 1.5px solid var(--oxford-navy);
+}
+
+/* ==========================================================================
+   Interactive Calculus Visualization Labs
+   ========================================================================== */
+
+.lab-card {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  border: 1.5px solid rgba(22, 45, 89, 0.2);
+  border-radius: var(--radius-lg);
+  padding: 20px 22px;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 22px;
+}
+
+.lab-layout {
+  display: grid;
+  grid-template-columns: 1.45fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.lab-canvas-wrap {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 10px;
+  position: relative;
+}
+
+.lab-canvas {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+  touch-action: pan-y;
+}
+
+.lab-controls {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.lab-control-group label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 6px;
+}
+
+.lab-range {
+  width: 100%;
+  accent-color: var(--oxford-navy);
+  cursor: pointer;
+  height: 28px;
+}
+
+.lab-seg-buttons {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.lab-seg-btn {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border-strong);
+  background: var(--bg-subtle);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.lab-seg-btn.active {
+  background: var(--oxford-navy);
+  color: #fff;
+  border-color: var(--oxford-navy);
+}
+
+.lab-readout-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.lab-metric {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+
+.lab-metric-label {
+  font-size: 0.74rem;
+  color: var(--text-muted);
+}
+
+.lab-metric-val {
+  font-family: var(--font-mono);
+  font-size: 0.94rem;
+  font-weight: 800;
+  color: var(--oxford-navy);
+}
+
+.lab-insight {
+  font-size: 0.86rem;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: var(--amber-soft);
+  border: 1px solid var(--amber-border);
+  color: #78350f;
+}
+
+/* ==========================================================================
+   Concept Relationship Graph View
+   ========================================================================== */
+
+.graph-wrapper {
+  background: #ffffff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  box-shadow: var(--shadow-sm);
+  overflow-x: auto;
+}
+
+.graph-svg {
+  width: 100%;
+  min-width: 780px;
+  height: auto;
+  display: block;
+}
+
+.graph-node {
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.graph-node rect {
+  transition: stroke-width 0.15s ease, filter 0.15s ease;
+}
+
+.graph-node:hover rect {
+  filter: drop-shadow(0 4px 10px rgba(22, 45, 89, 0.2));
+  stroke-width: 2.5px;
+}
+
+.graph-detail-panel {
+  margin-top: 18px;
+  padding: 18px 20px;
+  border-radius: var(--radius-md);
+  background: var(--oxford-navy-soft);
+  border: 1px solid rgba(22, 45, 89, 0.2);
+}
+
+/* ==========================================================================
+   Formula Reference & Glossary Tables
+   ========================================================================== */
+
+.filter-bar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.filter-input {
+  flex: 1;
+  min-width: 220px;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
+  font-size: 0.92rem;
+}
+
+.glossary-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.glossary-table th,
+.glossary-table td {
+  text-align: left;
+  padding: 11px 12px;
+  border-bottom: 1px solid var(--border-light);
+  vertical-align: top;
+}
+
+.glossary-table th {
+  background: var(--bg-subtle);
+  color: var(--oxford-navy);
+  font-weight: 800;
+}
+
+/* Unit Bottom Prev/Next Footer */
+.unit-footer-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 26px;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   Responsive Adjustments
+   ========================================================================== */
+
+@media (max-width: 960px) {
+  .hero-banner {
+    grid-template-columns: 1fr;
+  }
+
+  .lab-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .solution-row {
+    grid-template-columns: 1fr;
+  }
+
+  .solution-math {
+    border-right: none;
+    border-bottom: 1px dashed var(--border-light);
+  }
+
+  .pitfall-item {
+    grid-template-columns: 1fr;
+  }
+}
